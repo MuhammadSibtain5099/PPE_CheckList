@@ -8,19 +8,18 @@ Korean-first with a one-click English toggle.
 
 ## 실행 방법 (How to run)
 
-빌드 과정이 없는 정적 사이트입니다. 두 가지 방법 중 하나로 실행하세요.
+React(Vite) 프로젝트입니다.
 
 ```
-# 1) 파일로 바로 열기 — index.html 더블클릭
-
-# 2) 로컬 서버 (권장)
 cd f:\ContilCompany\Projects\CPWR
-python -m http.server 8000
-# → http://localhost:8000
+npm install        # 최초 1회
+npm run dev        # 개발 서버 → http://localhost:5173
+npm run build      # 배포용 빌드 → dist/
+npm run preview    # 빌드 결과 미리보기
 ```
 
-서버 없이 `index.html`을 직접 열어도 모든 기능(체크리스트, 기록, 내보내기)이 동작합니다.
-데이터는 전부 `js/data.js`에 있으며 네트워크 요청이 없습니다(웹폰트 제외 — 오프라인에서는 시스템 글꼴로 대체).
+Netlify는 `netlify.toml`에 따라 `npm run build` 후 `dist/`를 자동 배포합니다.
+데이터는 전부 `src/data.js`에 있으며 런타임 네트워크 요청이 없습니다(웹폰트 제외 — 오프라인에서는 시스템 글꼴로 대체).
 
 ## 주요 기능 (Features)
 
@@ -37,16 +36,23 @@ python -m http.server 8000
 
 ```
 CPWR/
-├── index.html        # 앱 셸 (헤더, 언어 토글, 푸터)
-├── css/style.css     # 스타일 (안전표지판 디자인 시스템)
-├── js/data.js        # ★ 모든 콘텐츠: i18n 문자열, 보호구 카탈로그, 공종 정의
-├── js/app.js         # 해시 라우터, 렌더링, 체크리스트/기록 로직
-└── README.md
+├── index.html                  # Vite 엔트리 (폰트, 파비콘, notranslate)
+├── vite.config.js
+├── netlify.toml                # Netlify 빌드 설정 (npm run build → dist/)
+└── src/
+    ├── main.jsx                # React 진입점
+    ├── App.jsx                 # 해시 라우터 + 공종별 세션 상태
+    ├── i18n.jsx                # KO/EN 언어 컨텍스트 (t, loc)
+    ├── data.js                 # ★ 모든 콘텐츠: i18n 문자열, 보호구 카탈로그, 공종 정의
+    ├── storage.js              # 점검 기록 localStorage 헬퍼
+    ├── styles.css              # 스타일 (안전표지판 디자인 시스템)
+    ├── components/             # Header, Footer
+    └── pages/                  # Home, TradePage, SummaryPage, RecordsPage
 ```
 
 ## 데이터 모델 (Data model)
 
-콘텐츠 수정·추가는 `js/data.js`만 편집하면 됩니다.
+콘텐츠 수정·추가는 `src/data.js`만 편집하면 됩니다.
 
 ### 보호구 카탈로그 (`ppeCatalog`)
 

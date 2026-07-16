@@ -11,37 +11,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-  <header class="site-header" id="siteHeader">
-    <a class="brand" href="#/">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span class="brand-text">
-        <strong data-t="brand"></strong>
-        <small data-t="brandSub"></small>
-      </span>
-    </a>
-    <nav class="site-nav" aria-label="주 메뉴">
-      <a href="#/" data-nav="home" data-t="navTrades"></a>
-      <a href="#/summary" data-nav="summary" data-t="navSummary"></a>
-      <a href="#/records" data-nav="records" data-t="navRecords"></a>
-    </nav>
-    <div class="lang-toggle" role="group" aria-label="Language">
-      <button type="button" data-lang="ko" aria-pressed="true">KO</button>
-      <button type="button" data-lang="en" aria-pressed="false">EN</button>
-    </div>
-  </header>
-
-  <main id="app" tabindex="-1"></main>
-
-  <footer class="site-footer">
-    <p data-t="footNote"></p>
-    <p class="foot-ai" data-t="footAi"></p>
-  </footer>
-
-  <script src="js/data.js"></script>
-  <script src="js/app.js"></script>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>

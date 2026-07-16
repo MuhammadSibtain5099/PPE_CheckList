@@ -1,5 +1,6 @@
-# 정적 사이트 — 빌드 과정 없음 (Static site — no build step)
+# Vite + React — Netlify 빌드 설정
 [build]
-  publish = "."
+  command = "npm run build"
+  publish = "dist"
 
 # SPA는 해시 라우팅(#/trade/...)을 사용하므로 리다이렉트 불필요

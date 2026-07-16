@@ -7,8 +7,8 @@
  * 감지 모델의 클래스 라벨로 사용됩니다. (README.md 참고)
  * ========================================================= */
 
-window.APP_DATA = (function () {
-  "use strict";
+
+
 
   /* ---------- UI 문자열 (i18n) ---------- */
   var i18n = {
@@ -858,5 +858,5 @@ window.APP_DATA = (function () {
     }
   ];
 
-  return { i18n: i18n, categories: categories, ppeCatalog: ppeCatalog, trades: trades };
-})();
+export default { i18n: i18n, categories: categories, ppeCatalog: ppeCatalog, trades: trades };
+
