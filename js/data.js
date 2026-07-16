@@ -564,6 +564,297 @@ window.APP_DATA = (function () {
         { id: "work_gloves", level: "conditional", note: { ko: "동절기·자재 정리 병행 시", en: "In winter or when also handling materials" } },
         { id: "ear_protection", level: "conditional", note: { ko: "고소음 구간 배치 시 — 경보음 청취 가능 여부 확인", en: "In high-noise zones — confirm alarms stay audible" } }
       ]
+    },
+    {
+      id: "steel",
+      plate: "철골",
+      name: { ko: "철골공", en: "Steel Erector" },
+      hazards: [
+        { ko: "고소 철골 위 이동 중 추락", en: "Falls while moving on steel members at height" },
+        { ko: "부재 인양 중 낙하·협착", en: "Dropped or swinging members during hoisting" },
+        { ko: "볼트·공구 낙하", en: "Falling bolts and tools" },
+        { ko: "강풍 등 악천후 고소작업", en: "Wind and weather hazards aloft" }
+      ],
+      talk: [
+        { ko: "이동 구간 전체에 안전대 걸이시설(생명줄)이 설치되어 있습니까?", en: "Are lifelines installed along the entire travel route?" },
+        { ko: "풍속 기준(순간풍속 초과 시 작업 중지)을 확인했습니까?", en: "Was the wind-speed stop limit checked before starting?" },
+        { ko: "인양 부재 하부 출입통제와 유도 로프를 사용하고 있습니까?", en: "Is the area below hoisting barricaded and are tag lines used?" }
+      ],
+      ppe: [
+        { id: "hard_hat", level: "required", note: { ko: "턱끈 체결 필수", en: "Chin strap mandatory" } },
+        { id: "harness", level: "required" },
+        { id: "safety_shoes", level: "required" },
+        { id: "work_gloves", level: "required" },
+        { id: "safety_vest", level: "required" },
+        { id: "safety_glasses", level: "conditional", note: { ko: "드릴링·볼팅 작업 시", en: "When drilling and bolting" } }
+      ]
+    },
+    {
+      id: "earthwork",
+      plate: "토공",
+      name: { ko: "토공·굴착공", en: "Earthwork & Excavation Worker" },
+      hazards: [
+        { ko: "굴착면 붕괴에 의한 매몰", en: "Burial from trench and slope collapse" },
+        { ko: "굴착기 등 장비 접촉", en: "Struck by excavators and plant" },
+        { ko: "지하 매설물(가스·전기) 파손", en: "Striking buried gas and power lines" },
+        { ko: "분진·소음", en: "Dust and noise" }
+      ],
+      talk: [
+        { ko: "굴착 깊이에 맞는 기울기 또는 흙막이 지보공이 되어 있습니까?", en: "Is the excavation sloped or shored for its depth?" },
+        { ko: "장비 선회 반경에 근로자가 접근하지 않도록 신호수가 있습니까?", en: "Is a spotter keeping workers out of the swing radius?" },
+        { ko: "지하 매설물 탐사 결과를 전원이 확인했습니까?", en: "Were utility scan results reviewed with the crew?" }
+      ],
+      ppe: [
+        { id: "hard_hat", level: "required" },
+        { id: "safety_shoes", level: "required" },
+        { id: "safety_vest", level: "required" },
+        { id: "work_gloves", level: "required" },
+        { id: "dust_mask", level: "conditional", note: { ko: "건조기 분진 다량 발생 시", en: "When heavy dust is generated in dry conditions" } },
+        { id: "ear_protection", level: "conditional", note: { ko: "브레이커·항타 작업 인접 시", en: "Near breakers and piling work" } }
+      ]
+    },
+    {
+      id: "carpentry",
+      plate: "목공",
+      name: { ko: "내장목공", en: "Interior Carpenter" },
+      hazards: [
+        { ko: "원형톱·타카 등 공구 상해", en: "Tool injuries from saws and nailers" },
+        { ko: "목분진 흡입", en: "Wood dust inhalation" },
+        { ko: "전동공구 소음", en: "Noise from power tools" },
+        { ko: "자재 운반 중 요통", en: "Back strain from carrying materials" }
+      ],
+      talk: [
+        { ko: "톱 방호덮개와 타카 안전장치가 정상 작동합니까?", en: "Are saw guards and nailer safeties working properly?" },
+        { ko: "절단 작업 구역에 집진·환기가 되어 있습니까?", en: "Is dust collection or ventilation set up at cutting stations?" },
+        { ko: "날·비트 교체 시 전원을 분리하고 있습니까?", en: "Is power disconnected before changing blades and bits?" }
+      ],
+      ppe: [
+        { id: "hard_hat", level: "required" },
+        { id: "safety_shoes", level: "required" },
+        { id: "safety_glasses", level: "required" },
+        { id: "work_gloves", level: "required" },
+        { id: "dust_mask", level: "conditional", note: { ko: "절단·연마 작업 시", en: "When cutting or sanding" } },
+        { id: "ear_protection", level: "conditional", note: { ko: "전동공구 연속 사용 시", en: "During continuous power-tool use" } }
+      ]
+    },
+    {
+      id: "tile",
+      plate: "타일",
+      name: { ko: "타일공", en: "Tiler" },
+      hazards: [
+        { ko: "타일 절단 분진(실리카)·파편", en: "Silica dust and shards when cutting tile" },
+        { ko: "접착제·시멘트 피부 접촉", en: "Skin contact with adhesives and cement" },
+        { ko: "장시간 무릎 꿇는 작업", en: "Prolonged kneeling" },
+        { ko: "젖은 바닥 미끄러짐", en: "Slips on wet floors" }
+      ],
+      talk: [
+        { ko: "습식 절단기 또는 집진장치를 사용하고 있습니까?", en: "Is a wet saw or dust extraction used for cutting?" },
+        { ko: "본드·접착제 사용 구역이 환기되고 있습니까?", en: "Is the adhesive work area ventilated?" },
+        { ko: "무릎보호대를 착용하고 주기적으로 자세를 바꾸고 있습니까?", en: "Are knee pads worn and postures rotated regularly?" }
+      ],
+      ppe: [
+        { id: "hard_hat", level: "required" },
+        { id: "safety_shoes", level: "required" },
+        { id: "chem_gloves", level: "required" },
+        { id: "knee_pads", level: "required" },
+        { id: "safety_glasses", level: "required", note: { ko: "절단 작업 시", en: "When cutting" } },
+        { id: "dust_mask", level: "conditional", note: { ko: "건식 절단 시", en: "During dry cutting" } },
+        { id: "gas_mask", level: "conditional", note: { ko: "본드 다량 사용·밀폐 구역", en: "Heavy adhesive use in enclosed areas" } }
+      ]
+    },
+    {
+      id: "stone",
+      plate: "석공",
+      name: { ko: "석공", en: "Stone Mason" },
+      hazards: [
+        { ko: "석재 절단·연마 분진(결정형 실리카)", en: "Crystalline silica from cutting and grinding stone" },
+        { ko: "중량 석재 취급 협착·요통", en: "Crush injuries and strain from heavy stone" },
+        { ko: "파편 비산", en: "Flying fragments" },
+        { ko: "고소음", en: "High noise" }
+      ],
+      talk: [
+        { ko: "습식 공법 또는 집진장치로 분진을 억제하고 있습니까?", en: "Is dust suppressed with wet methods or extraction?" },
+        { ko: "석재 인양·운반 장비와 신호 방법을 확인했습니까?", en: "Are lifting gear and signals confirmed for stone handling?" },
+        { ko: "방진마스크 밀착 상태를 오늘 점검했습니까?", en: "Was respirator fit checked today?" }
+      ],
+      ppe: [
+        { id: "hard_hat", level: "required" },
+        { id: "safety_shoes", level: "required" },
+        { id: "dust_mask", level: "required" },
+        { id: "safety_glasses", level: "required" },
+        { id: "cut_gloves", level: "required" },
+        { id: "ear_protection", level: "required" },
+        { id: "face_shield", level: "conditional", note: { ko: "연마·연삭 작업 시", en: "During grinding and polishing" } },
+        { id: "knee_pads", level: "conditional", note: { ko: "바닥 석재 시공 시", en: "During floor stone installation" } }
+      ]
+    },
+    {
+      id: "wallpaper",
+      plate: "도배",
+      name: { ko: "도배공", en: "Wallpaperer" },
+      hazards: [
+        { ko: "사다리·우마 위 작업 중 낙상", en: "Falls from ladders and low work platforms" },
+        { ko: "퍼티 연마 분진", en: "Dust from sanding filler" },
+        { ko: "접착제 증기", en: "Adhesive vapors" },
+        { ko: "천장 반복 작업 어깨·목 부담", en: "Shoulder and neck strain from overhead work" }
+      ],
+      talk: [
+        { ko: "우마·사다리 상태와 사용 기준(2인 1조 등)을 확인했습니까?", en: "Are platforms and ladders inspected and used within the rules?" },
+        { ko: "퍼티 연마 시 방진마스크를 착용하고 있습니까?", en: "Are dust masks worn when sanding filler?" },
+        { ko: "밀폐된 방은 환기하면서 작업하고 있습니까?", en: "Are closed rooms ventilated during work?" }
+      ],
+      ppe: [
+        { id: "hard_hat", level: "required" },
+        { id: "safety_shoes", level: "required" },
+        { id: "dust_mask", level: "conditional", note: { ko: "퍼티 연마 작업 시", en: "When sanding filler" } },
+        { id: "safety_glasses", level: "conditional", note: { ko: "천장·연마 작업 시", en: "For ceiling and sanding work" } },
+        { id: "work_gloves", level: "conditional", note: { ko: "칼날 작업 시 베임 주의", en: "Watch for blade cuts" } }
+      ]
+    },
+    {
+      id: "glazing",
+      plate: "창호",
+      name: { ko: "창호·유리공", en: "Window & Glass Installer" },
+      hazards: [
+        { ko: "유리 파손에 의한 베임", en: "Cuts from broken glass" },
+        { ko: "개구부·외부 창호 설치 중 추락", en: "Falls installing at openings and facades" },
+        { ko: "중량 유리 취급 협착", en: "Crush injuries from heavy glass units" },
+        { ko: "흡착기 탈락에 의한 낙하", en: "Dropped panes from suction-cup failure" }
+      ],
+      talk: [
+        { ko: "흡착기(석션컵) 흡착력을 사용 전에 확인했습니까?", en: "Are suction cups checked for grip before each lift?" },
+        { ko: "개구부 주변에 안전대 체결 지점이 확보되어 있습니까?", en: "Are tie-off points available near openings?" },
+        { ko: "파손 유리를 즉시 수거하고 전용 폐기함을 사용합니까?", en: "Is broken glass collected immediately into a dedicated bin?" }
+      ],
+      ppe: [
+        { id: "hard_hat", level: "required" },
+        { id: "safety_shoes", level: "required" },
+        { id: "cut_gloves", level: "required" },
+        { id: "safety_glasses", level: "required" },
+        { id: "harness", level: "conditional", note: { ko: "개구부·외벽 설치 작업 시", en: "When installing at openings and facades" } },
+        { id: "leg_guards", level: "conditional", note: { ko: "대형 판유리 운반 시", en: "When carrying large panes" } }
+      ]
+    },
+    {
+      id: "hvac",
+      plate: "설비",
+      name: { ko: "설비·덕트공", en: "HVAC & Mechanical Installer" },
+      hazards: [
+        { ko: "판금 모서리 베임", en: "Cuts from sheet-metal edges" },
+        { ko: "사다리·천장 내부 고소 작업 추락", en: "Falls from ladders and ceiling-void work" },
+        { ko: "중량 장비 인양·설치 협착", en: "Crush injuries during equipment rigging" },
+        { ko: "용접·브레이징 화상", en: "Burns from welding and brazing" }
+      ],
+      talk: [
+        { ko: "천장 내부·샤프트 작업의 발판이 안전합니까?", en: "Are work platforms safe for ceiling-void and shaft work?" },
+        { ko: "판금 취급 시 절단방지장갑을 착용하고 있습니까?", en: "Are cut-resistant gloves worn for sheet metal?" },
+        { ko: "화기 작업 허가서와 소화기를 확인했습니까?", en: "Hot-work permit and extinguisher confirmed?" }
+      ],
+      ppe: [
+        { id: "hard_hat", level: "required" },
+        { id: "safety_shoes", level: "required" },
+        { id: "cut_gloves", level: "required" },
+        { id: "safety_glasses", level: "required" },
+        { id: "harness", level: "conditional", note: { ko: "고소·천장 내부 작업 시", en: "For elevated and ceiling-void work" } },
+        { id: "welding_gloves", level: "conditional", note: { ko: "브레이징·용접 시", en: "When brazing or welding" } },
+        { id: "ear_protection", level: "conditional", note: { ko: "전동공구 연속 사용 시", en: "During continuous power-tool use" } }
+      ]
+    },
+    {
+      id: "insulation",
+      plate: "보온",
+      name: { ko: "보온공", en: "Insulation Worker" },
+      hazards: [
+        { ko: "미네랄울·유리섬유 피부·호흡기 자극", en: "Skin and respiratory irritation from mineral wool and fiberglass" },
+        { ko: "배관 사이 협소공간 작업", en: "Work in tight spaces between services" },
+        { ko: "접착제 증기", en: "Adhesive vapors" },
+        { ko: "고온 배관 접촉 화상", en: "Burns from hot pipework" }
+      ],
+      talk: [
+        { ko: "섬유 분진을 차단할 긴소매 보호복을 착용했습니까?", en: "Are long-sleeve coveralls worn against fiber dust?" },
+        { ko: "절단 작업 시 방진마스크를 착용하고 있습니까?", en: "Are respirators worn when cutting insulation?" },
+        { ko: "고온 배관 구간이 사전에 표시되어 있습니까?", en: "Are hot lines identified and marked before work?" }
+      ],
+      ppe: [
+        { id: "hard_hat", level: "required" },
+        { id: "safety_shoes", level: "required" },
+        { id: "dust_mask", level: "required" },
+        { id: "safety_glasses", level: "required", note: { ko: "고글형 권장", en: "Sealed goggles recommended" } },
+        { id: "work_gloves", level: "required" },
+        { id: "chem_suit", level: "conditional", note: { ko: "섬유 분진 차단용 보호복", en: "Coveralls against fiber dust" } },
+        { id: "gas_mask", level: "conditional", note: { ko: "접착제 다량 사용 시", en: "With heavy adhesive use" } }
+      ]
+    },
+    {
+      id: "paving",
+      plate: "포장",
+      name: { ko: "포장공", en: "Paving Worker" },
+      hazards: [
+        { ko: "고온 아스팔트 화상·흄", en: "Burns and fumes from hot asphalt" },
+        { ko: "롤러·피니셔 등 장비 협착", en: "Caught by rollers and pavers" },
+        { ko: "공용도로 차량 충돌", en: "Struck by traffic on live roads" },
+        { ko: "폭염·복사열 온열질환", en: "Heat illness from radiant heat" }
+      ],
+      talk: [
+        { ko: "차량 통제 시설(콘·표지판·신호수)이 규정대로 설치되어 있습니까?", en: "Is traffic control (cones, signs, flaggers) set up to standard?" },
+        { ko: "고온 아스팔트 취급 시 장갑과 긴옷을 착용합니까?", en: "Are gloves and long clothing worn for hot mix?" },
+        { ko: "물·그늘·휴식 주기를 정했습니까?", en: "Are water, shade and rest cycles agreed?" }
+      ],
+      ppe: [
+        { id: "safety_vest", level: "required", note: { ko: "고휘도 반사", en: "High-visibility class" } },
+        { id: "hard_hat", level: "required" },
+        { id: "safety_shoes", level: "required" },
+        { id: "work_gloves", level: "required", note: { ko: "고온 아스팔트 — 내열성 확인", en: "Hot asphalt — check heat resistance" } },
+        { id: "dust_mask", level: "conditional", note: { ko: "아스팔트 흄 다량 발생 시", en: "When asphalt fumes are heavy" } },
+        { id: "ear_protection", level: "conditional", note: { ko: "장비 인접 작업 시", en: "When working next to plant" } }
+      ]
+    },
+    {
+      id: "rope_access",
+      plate: "달비",
+      name: { ko: "달비계공", en: "Rope Access Worker" },
+      hazards: [
+        { ko: "로프 파단·풀림에 의한 추락", en: "Falls from rope failure or detachment" },
+        { ko: "수직구명줄 미사용 작업", en: "Working without an independent lifeline" },
+        { ko: "모서리 로프 마모·손상", en: "Rope abrasion and damage at edges" },
+        { ko: "공구 낙하", en: "Falling tools" }
+      ],
+      talk: [
+        { ko: "작업로프와 수직구명줄을 각각 별도의 지지점에 걸었습니까?", en: "Are the work rope and lifeline anchored to separate points?" },
+        { ko: "모서리 로프 보호대와 로프 상태를 점검했습니까?", en: "Are edge protectors fitted and rope condition checked?" },
+        { ko: "지상 감시인이 배치되어 있고 하부 출입이 통제됩니까?", en: "Is a ground watcher posted and the area below controlled?" }
+      ],
+      ppe: [
+        { id: "harness", level: "required", note: { ko: "그네식 + 추락방지대(코브라) 체결", en: "Full-body harness with rope grab on the lifeline" } },
+        { id: "hard_hat", level: "required", note: { ko: "턱끈 체결 필수", en: "Chin strap mandatory" } },
+        { id: "safety_shoes", level: "required" },
+        { id: "work_gloves", level: "required" },
+        { id: "safety_glasses", level: "conditional", note: { ko: "외벽 연마·세척 작업 시", en: "When grinding or washing facades" } }
+      ]
+    },
+    {
+      id: "laborer",
+      plate: "인부",
+      name: { ko: "보통인부", en: "General Laborer" },
+      hazards: [
+        { ko: "자재 운반 중 요통·협착", en: "Strains and pinch points carrying materials" },
+        { ko: "상부 작업 구간 낙하물", en: "Falling objects from work above" },
+        { ko: "장비·차량 접촉", en: "Contact with plant and vehicles" },
+        { ko: "정리정돈 불량에 의한 전도", en: "Trips from poor housekeeping" }
+      ],
+      talk: [
+        { ko: "중량물은 2인 이상 또는 운반기구를 사용하기로 했습니까?", en: "Two-person lifts or handling aids agreed for heavy loads?" },
+        { ko: "이동 통로와 장비 작업 구역이 구분되어 있습니까?", en: "Are walkways separated from equipment zones?" },
+        { ko: "오늘 작업 구역의 위험 요소를 전원이 공유했습니까?", en: "Were today's area hazards shared with everyone?" }
+      ],
+      ppe: [
+        { id: "hard_hat", level: "required" },
+        { id: "safety_shoes", level: "required" },
+        { id: "safety_vest", level: "required" },
+        { id: "work_gloves", level: "required" },
+        { id: "dust_mask", level: "conditional", note: { ko: "분진 작업 보조 시", en: "When assisting dusty work" } },
+        { id: "safety_glasses", level: "conditional", note: { ko: "파편 비산 작업 인접 시", en: "Near work with flying debris" } }
+      ]
     }
   ];
 
