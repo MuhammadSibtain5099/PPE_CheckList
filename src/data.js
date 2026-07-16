@@ -12,8 +12,8 @@
 
   /* ---------- UI 문자열 (i18n) ---------- */
   var i18n = {
-    brand:        { ko: "PPE 체크", en: "PPE Check" },
-    brandSub:     { ko: "툴박스 미팅 보호구 점검", en: "Toolbox meeting PPE checklist" },
+    brand:        { ko: "PPE 체크리스트", en: "PPE Check List" },
+    brandSub:     { ko: "by Contil Lab", en: "by Contil Lab" },
     navTrades:    { ko: "공종별 점검", en: "Trades" },
     navSummary:   { ko: "요약표", en: "Summary" },
     navRecords:   { ko: "점검 기록", en: "Records" },
@@ -243,7 +243,7 @@
   var trades = [
     {
       id: "rebar",
-      plate: "철근",
+      plate: "철근", plateEn: "REBAR",
       name: { ko: "철근공", en: "Rebar Worker" },
       hazards: [
         { ko: "돌출 철근에 찔림·관통", en: "Impalement on protruding rebar" },
@@ -268,7 +268,7 @@
     },
     {
       id: "formwork",
-      plate: "형틀",
+      plate: "형틀", plateEn: "FORM",
       name: { ko: "형틀목공", en: "Formwork Carpenter" },
       hazards: [
         { ko: "개구부·슬래브 단부 추락", en: "Falls through openings and slab edges" },
@@ -293,7 +293,7 @@
     },
     {
       id: "concrete",
-      plate: "콘크",
+      plate: "콘크", plateEn: "CONC",
       name: { ko: "콘크리트공", en: "Concrete Worker" },
       hazards: [
         { ko: "시멘트 접촉 피부염·화학 화상", en: "Cement dermatitis and chemical burns" },
@@ -318,7 +318,7 @@
     },
     {
       id: "scaffold",
-      plate: "비계",
+      plate: "비계", plateEn: "SCAF",
       name: { ko: "비계공", en: "Scaffolder" },
       hazards: [
         { ko: "조립·해체 중 추락", en: "Falls during erection and dismantling" },
@@ -342,7 +342,7 @@
     },
     {
       id: "welding",
-      plate: "용접",
+      plate: "용접", plateEn: "WELD",
       name: { ko: "용접공", en: "Welder" },
       hazards: [
         { ko: "아크광선에 의한 눈 손상 (전광성 안염)", en: "Arc-eye from ultraviolet radiation" },
@@ -369,7 +369,7 @@
     },
     {
       id: "electrical",
-      plate: "전기",
+      plate: "전기", plateEn: "ELEC",
       name: { ko: "전기공", en: "Electrician" },
       hazards: [
         { ko: "충전부 접촉 감전", en: "Electric shock from energized parts" },
@@ -393,7 +393,7 @@
     },
     {
       id: "plumbing",
-      plate: "배관",
+      plate: "배관", plateEn: "PIPE",
       name: { ko: "배관공", en: "Plumber" },
       hazards: [
         { ko: "중량 배관 취급 중 협착·요통", en: "Crush injuries and back strain from heavy pipe" },
@@ -418,7 +418,7 @@
     },
     {
       id: "painting",
-      plate: "도장",
+      plate: "도장", plateEn: "PAINT",
       name: { ko: "도장공", en: "Painter" },
       hazards: [
         { ko: "유기용제 증기 흡입·중독", en: "Solvent vapor inhalation and poisoning" },
@@ -443,7 +443,7 @@
     },
     {
       id: "masonry",
-      plate: "조적",
+      plate: "조적", plateEn: "MASON",
       name: { ko: "조적·미장공", en: "Mason & Plasterer" },
       hazards: [
         { ko: "벽돌·석재 절단 분진 (결정형 실리카)", en: "Cutting dust containing crystalline silica" },
@@ -468,7 +468,7 @@
     },
     {
       id: "waterproofing",
-      plate: "방수",
+      plate: "방수", plateEn: "WPROOF",
       name: { ko: "방수공", en: "Waterproofing Worker" },
       hazards: [
         { ko: "프라이머·용제 증기 흡입", en: "Primer and solvent vapor inhalation" },
@@ -494,7 +494,7 @@
     },
     {
       id: "demolition",
-      plate: "해체",
+      plate: "해체", plateEn: "DEMO",
       name: { ko: "해체공", en: "Demolition Worker" },
       hazards: [
         { ko: "구조물 예기치 못한 붕괴", en: "Unexpected structural collapse" },
@@ -521,7 +521,7 @@
     },
     {
       id: "equipment",
-      plate: "장비",
+      plate: "장비", plateEn: "EQUIP",
       name: { ko: "건설기계 운전원", en: "Equipment Operator" },
       hazards: [
         { ko: "하차 후 장비 주변 협착·충돌", en: "Struck-by and crush hazards around machines" },
@@ -544,7 +544,7 @@
     },
     {
       id: "flagger",
-      plate: "신호",
+      plate: "신호", plateEn: "SIGNAL",
       name: { ko: "신호수·유도원", en: "Signaler & Flagger" },
       hazards: [
         { ko: "차량·건설기계 충돌", en: "Struck by vehicles and construction plant" },
@@ -567,7 +567,7 @@
     },
     {
       id: "steel",
-      plate: "철골",
+      plate: "철골", plateEn: "STEEL",
       name: { ko: "철골공", en: "Steel Erector" },
       hazards: [
         { ko: "고소 철골 위 이동 중 추락", en: "Falls while moving on steel members at height" },
@@ -591,7 +591,7 @@
     },
     {
       id: "earthwork",
-      plate: "토공",
+      plate: "토공", plateEn: "EARTH",
       name: { ko: "토공·굴착공", en: "Earthwork & Excavation Worker" },
       hazards: [
         { ko: "굴착면 붕괴에 의한 매몰", en: "Burial from trench and slope collapse" },
@@ -615,7 +615,7 @@
     },
     {
       id: "carpentry",
-      plate: "목공",
+      plate: "목공", plateEn: "WOOD",
       name: { ko: "내장목공", en: "Interior Carpenter" },
       hazards: [
         { ko: "원형톱·타카 등 공구 상해", en: "Tool injuries from saws and nailers" },
@@ -639,7 +639,7 @@
     },
     {
       id: "tile",
-      plate: "타일",
+      plate: "타일", plateEn: "TILE",
       name: { ko: "타일공", en: "Tiler" },
       hazards: [
         { ko: "타일 절단 분진(실리카)·파편", en: "Silica dust and shards when cutting tile" },
@@ -664,7 +664,7 @@
     },
     {
       id: "stone",
-      plate: "석공",
+      plate: "석공", plateEn: "STONE",
       name: { ko: "석공", en: "Stone Mason" },
       hazards: [
         { ko: "석재 절단·연마 분진(결정형 실리카)", en: "Crystalline silica from cutting and grinding stone" },
@@ -690,7 +690,7 @@
     },
     {
       id: "wallpaper",
-      plate: "도배",
+      plate: "도배", plateEn: "PAPER",
       name: { ko: "도배공", en: "Wallpaperer" },
       hazards: [
         { ko: "사다리·우마 위 작업 중 낙상", en: "Falls from ladders and low work platforms" },
@@ -713,7 +713,7 @@
     },
     {
       id: "glazing",
-      plate: "창호",
+      plate: "창호", plateEn: "GLASS",
       name: { ko: "창호·유리공", en: "Window & Glass Installer" },
       hazards: [
         { ko: "유리 파손에 의한 베임", en: "Cuts from broken glass" },
@@ -737,7 +737,7 @@
     },
     {
       id: "hvac",
-      plate: "설비",
+      plate: "설비", plateEn: "HVAC",
       name: { ko: "설비·덕트공", en: "HVAC & Mechanical Installer" },
       hazards: [
         { ko: "판금 모서리 베임", en: "Cuts from sheet-metal edges" },
@@ -762,7 +762,7 @@
     },
     {
       id: "insulation",
-      plate: "보온",
+      plate: "보온", plateEn: "INSUL",
       name: { ko: "보온공", en: "Insulation Worker" },
       hazards: [
         { ko: "미네랄울·유리섬유 피부·호흡기 자극", en: "Skin and respiratory irritation from mineral wool and fiberglass" },
@@ -787,7 +787,7 @@
     },
     {
       id: "paving",
-      plate: "포장",
+      plate: "포장", plateEn: "PAVE",
       name: { ko: "포장공", en: "Paving Worker" },
       hazards: [
         { ko: "고온 아스팔트 화상·흄", en: "Burns and fumes from hot asphalt" },
@@ -811,7 +811,7 @@
     },
     {
       id: "rope_access",
-      plate: "달비",
+      plate: "달비", plateEn: "ROPE",
       name: { ko: "달비계공", en: "Rope Access Worker" },
       hazards: [
         { ko: "로프 파단·풀림에 의한 추락", en: "Falls from rope failure or detachment" },
@@ -834,7 +834,7 @@
     },
     {
       id: "laborer",
-      plate: "인부",
+      plate: "인부", plateEn: "LABOR",
       name: { ko: "보통인부", en: "General Laborer" },
       hazards: [
         { ko: "자재 운반 중 요통·협착", en: "Strains and pinch points carrying materials" },

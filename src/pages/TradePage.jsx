@@ -70,7 +70,12 @@ export default function TradePage({ id, sessions, setSessions }) {
               aria-current={tr.id === id ? "page" : undefined}
               href={"#/trade/" + tr.id}
             >
-              <span className="side-plate" aria-hidden="true">{tr.plate}</span>
+              <span
+                className={"side-plate" + (lang === "en" ? " plate-en" : "")}
+                aria-hidden="true"
+              >
+                {lang === "en" ? tr.plateEn : tr.plate}
+              </span>
               <span className="side-name">{loc(tr.name)}</span>
             </a>
           ))}
@@ -78,10 +83,14 @@ export default function TradePage({ id, sessions, setSessions }) {
 
         <div className="trade-main">
           <header className="detail-head">
-            <span className="trade-plate plate-lg" aria-hidden="true">{trade.plate}</span>
+            <span
+              className={"trade-plate plate-lg" + (lang === "en" ? " plate-en" : "")}
+              aria-hidden="true"
+            >
+              {lang === "en" ? trade.plateEn : trade.plate}
+            </span>
             <div>
               <h1>{loc(trade.name)}</h1>
-              <p className="detail-alt">{lang === "ko" ? trade.name.en : trade.name.ko}</p>
             </div>
           </header>
 

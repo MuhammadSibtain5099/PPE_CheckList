@@ -41,10 +41,14 @@ export default function Home() {
             const cond = trade.ppe.length - req;
             return (
               <a key={trade.id} className="trade-card" href={"#/trade/" + trade.id}>
-                <span className="trade-plate" aria-hidden="true">{trade.plate}</span>
+                <span
+                  className={"trade-plate" + (lang === "en" ? " plate-en" : "")}
+                  aria-hidden="true"
+                >
+                  {lang === "en" ? trade.plateEn : trade.plate}
+                </span>
                 <span className="trade-card-body">
                   <strong>{loc(trade.name)}</strong>
-                  <small>{lang === "ko" ? trade.name.en : trade.name.ko}</small>
                   <span className="trade-count">{t("cardCount", { r: req, c: cond })}</span>
                 </span>
                 <span className="trade-arrow" aria-hidden="true">→</span>

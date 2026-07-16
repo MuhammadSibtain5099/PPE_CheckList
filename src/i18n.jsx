@@ -24,8 +24,8 @@ export function LangProvider({ children }) {
     document.documentElement.lang = lang;
     document.title =
       lang === "ko"
-        ? "안전제일 PPE 체크 — 툴박스 미팅 보호구 점검"
-        : "Safety First PPE Check — Toolbox Meeting PPE Checklists";
+        ? "PPE 체크리스트 by Contil Lab — 공종별 보호구 점검"
+        : "PPE Check List by Contil Lab";
   }, [lang]);
 
   /* UI 문자열 조회: t("progressLabel", { done: 2, total: 5 }) */
