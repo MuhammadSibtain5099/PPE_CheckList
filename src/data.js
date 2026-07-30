@@ -185,6 +185,11 @@
       name: { ko: "방독마스크", en: "Gas respirator" },
       desc: { ko: "유기용제 등 가스·증기 작업 — 정화통 유효기간 확인", en: "Organic vapors and gases — check cartridge expiry" }
     },
+    supplied_air: {
+      cat: "resp", aiLabel: "supplied_air_respirator",
+      name: { ko: "송기마스크·공기호흡기", en: "Supplied-air respirator / SCBA" },
+      desc: { ko: "산소결핍 우려 공간 — 방독·방진마스크로는 보호되지 않음, 사전 산소농도 측정 필수", en: "Oxygen-deficient spaces — cartridge/filter respirators do not protect here; measure oxygen level before entry" }
+    },
     ear_protection: {
       cat: "hearing", aiLabel: "ear_protection",
       name: { ko: "귀마개·귀덮개", en: "Hearing protection" },
@@ -411,7 +416,8 @@
         { id: "safety_shoes", level: "required" },
         { id: "work_gloves", level: "required" },
         { id: "safety_glasses", level: "required" },
-        { id: "gas_mask", level: "conditional", note: { ko: "접착제 사용·밀폐공간 작업 시", en: "With solvent cements or in confined spaces" } },
+        { id: "gas_mask", level: "conditional", note: { ko: "접착제(솔벤트 시멘트) 사용 시", en: "When using solvent-cement adhesives" } },
+        { id: "supplied_air", level: "conditional", note: { ko: "피트·맨홀 등 밀폐공간 진입 시 — 산소결핍 우려, 방독마스크로 대체 불가", en: "For pit/manhole confined-space entry — possible oxygen deficiency; not substitutable with a gas respirator" } },
         { id: "welding_gloves", level: "conditional", note: { ko: "토치 작업 시", en: "During torch work" } },
         { id: "harness", level: "conditional", note: { ko: "피트 진입·고소 작업 시", en: "For pit entry and work at height" } }
       ]
@@ -477,12 +483,13 @@
         { ko: "방수재 피부 접촉", en: "Skin contact with membranes and resins" }
       ],
       talk: [
-        { ko: "밀폐공간 작업 전 환기와 가스 농도 측정을 했습니까?", en: "Were ventilation and gas measurement done before confined-space work?" },
+        { ko: "밀폐공간 작업 전 산소·가스 농도를 측정하고 환기했습니까?", en: "Were oxygen and gas levels measured and the space ventilated before confined-space work?" },
         { ko: "토치 작업 반경에 가연물이 치워져 있고 소화기가 있습니까?", en: "Are combustibles cleared and an extinguisher present for torch work?" },
         { ko: "방독마스크 정화통이 유효기간 내에 있습니까?", en: "Are respirator cartridges within their service life?" }
       ],
       ppe: [
-        { id: "gas_mask", level: "required" },
+        { id: "gas_mask", level: "required", note: { ko: "프라이머·용제 증기 작업 시", en: "For primer and solvent-vapor work" } },
+        { id: "supplied_air", level: "conditional", note: { ko: "지하·저수조 등 밀폐공간 진입 시 — 산소결핍 우려, 방독마스크로 대체 불가", en: "For basement/tank confined-space entry — possible oxygen deficiency; not substitutable with a gas respirator" } },
         { id: "chem_gloves", level: "required" },
         { id: "safety_glasses", level: "required" },
         { id: "hard_hat", level: "required" },
